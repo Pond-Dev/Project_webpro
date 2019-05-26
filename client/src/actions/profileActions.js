@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
   GET_ERRORS,
@@ -27,6 +28,26 @@ export const getCurrentProfile = () => dispatch => {
     );
 };
 
+// Get profile by firstname
+export const getProfileByHandle = firstname => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/firstname/${firstname}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
+      })
+    );
+};
+
+
 // Create Profile
 export const createProfile = (profileData, history) => dispatch => {
   axios
@@ -39,6 +60,26 @@ export const createProfile = (profileData, history) => dispatch => {
       })
     );
 };
+
+// Get all profile
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get('/api/profile/all')
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: null
+      })
+    );
+};
+
 
 // Delete account & profile
 export const deleteAccount = () => dispatch => {
