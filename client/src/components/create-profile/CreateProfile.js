@@ -11,14 +11,12 @@ class CreateProfile extends Component {
     super(props);
     this.state = {
       displaySocialInputs: false,
-      handle: '',
-      company: '',
-      website: '',
-      location: '',
-      status: '',
-      skills: '',
-      githubusername: '',
-      bio: '',
+      firstname: '',
+      lastname: '',
+      gender: '',
+      birthday: '',
+      address: '',
+      phonenumber: '',
       errors: {}
     };
 
@@ -36,14 +34,12 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
-      handle: this.state.handle,
-      company: this.state.company,
-      website: this.state.website,
-      location: this.state.location,
-      status: this.state.status,
-      skills: this.state.skills,
-      githubusername: this.state.githubusername,
-      bio: this.state.bio
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      gender: this.state.gender,
+      birthday: this.state.birthday,
+      address: this.state.address,
+      phonenumber: this.state.phonenumber
     };
 
     this.props.createProfile(profileData, this.props.history);
@@ -56,12 +52,11 @@ class CreateProfile extends Component {
   render() {
     const { errors } = this.state;
 
-    // Select options for status
+    // Select options for Gender
     const options = [
       { label: '* Gender', value: 0 },
       { label: 'Male', value: 'Male' },
-      { label: 'Female', value: 'Female' },
-      { label: 'Other', value: 'Other' }
+      { label: 'Female', value: 'Female' }
     ];
 
     return (
@@ -76,72 +71,60 @@ class CreateProfile extends Component {
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Profile Handle"
-                  name="handle"
-                  value={this.state.handle}
+                  placeholder="* Firstname"
+                  name="firstname"
+                  value={this.state.firstname}
                   onChange={this.onChange}
-                  error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
+                  error={errors.firstname}
+                  info="A unique handle for your profile URL. Your full name, lastname name, nickname"
+                />
+                <TextFieldGroup
+                  placeholder="lastname"
+                  name="lastname"
+                  value={this.state.lastname}
+                  onChange={this.onChange}
+                  error={errors.lastname}
+                  info="Could be your own lastname or one you work for"
                 />
                 <SelectListGroup
-                  placeholder="Status"
-                  name="status"
-                  value={this.state.status}
+                  placeholder="Gender"
+                  name="gender"
+                  value={this.state.gender}
                   onChange={this.onChange}
                   options={options}
-                  error={errors.status}
-                  info="Give us an idea of where you are at in your career"
+                  error={errors.gender}
+                  info="Could be your own gender or a lastname one"
                 />
                 <TextFieldGroup
-                  placeholder="Company"
-                  name="company"
-                  value={this.state.company}
+                  placeholder="Birthday"
+                  name="birthday"
+                  value={this.state.birthday}
                   onChange={this.onChange}
-                  error={errors.company}
-                  info="Could be your own company or one you work for"
-                />
-                <TextFieldGroup
-                  placeholder="Website"
-                  name="website"
-                  value={this.state.website}
-                  onChange={this.onChange}
-                  error={errors.website}
-                  info="Could be your own website or a company one"
-                />
-                <TextFieldGroup
-                  placeholder="Location"
-                  name="location"
-                  value={this.state.location}
-                  onChange={this.onChange}
-                  error={errors.location}
+                  error={errors.birthday}
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
-                  placeholder="* Skills"
-                  name="skills"
-                  value={this.state.skills}
+                  placeholder="* Address"
+                  name="address"
+                  value={this.state.address}
                   onChange={this.onChange}
-                  error={errors.skills}
+                  error={errors.address}
+                  info="Give us an idea of where you are at in your career"
+                />
+                <TextFieldGroup
+                  placeholder="phonenumber"
+                  name="phonenumber"
+                  value={this.state.phonenumber}
+                  onChange={this.onChange}
+                  error={errors.phonenumber}
                   info="Please use comma separated values (eg.
                     HTML,CSS,JavaScript,PHP"
                 />
-                <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
+                <input
+                  type="submit"
+                  value="Submit"
+                  className="btn btn-info btn-block mt-4"
                 />
-                <TextFieldGroup
-                  placeholder="Short Bio"
-                  name="bio"
-                  value={this.state.bio}
-                  onChange={this.onChange}
-                  error={errors.bio}
-                  info="Tell us a little about yourself"
-                /> 
-                <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
           </div>
