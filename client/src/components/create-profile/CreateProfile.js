@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
-import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import { createProfile } from '../../actions/profileActions';
 
@@ -21,11 +19,6 @@ class CreateProfile extends Component {
       skills: '',
       githubusername: '',
       bio: '',
-      twitter: '',
-      facebook: '',
-      linkedin: '',
-      youtube: '',
-      instagram: '',
       errors: {}
     };
 
@@ -50,12 +43,7 @@ class CreateProfile extends Component {
       status: this.state.status,
       skills: this.state.skills,
       githubusername: this.state.githubusername,
-      bio: this.state.bio,
-      twitter: this.state.twitter,
-      facebook: this.state.facebook,
-      linkedin: this.state.linkedin,
-      youtube: this.state.youtube,
-      instagram: this.state.instagram
+      bio: this.state.bio
     };
 
     this.props.createProfile(profileData, this.props.history);
@@ -70,14 +58,9 @@ class CreateProfile extends Component {
 
     // Select options for status
     const options = [
-      { label: '* Select Professional Status', value: 0 },
-      { label: 'Developer', value: 'Developer' },
-      { label: 'Junior Developer', value: 'Junior Developer' },
-      { label: 'Senior Developer', value: 'Senior Developer' },
-      { label: 'Manager', value: 'Manager' },
-      { label: 'Student or Learning', value: 'Student or Learning' },
-      { label: 'Instructor or Teacher', value: 'Instructor or Teacher' },
-      { label: 'Intern', value: 'Intern' },
+      { label: '* Gender', value: 0 },
+      { label: 'Male', value: 'Male' },
+      { label: 'Female', value: 'Female' },
       { label: 'Other', value: 'Other' }
     ];
 
@@ -150,19 +133,15 @@ class CreateProfile extends Component {
                   error={errors.githubusername}
                   info="If you want your latest repos and a Github link, include your username"
                 />
-                <TextAreaFieldGroup
+                <TextFieldGroup
                   placeholder="Short Bio"
                   name="bio"
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
                   info="Tell us a little about yourself"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="btn btn-info btn-block mt-4"
-                />
+                /> 
+                <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
           </div>
