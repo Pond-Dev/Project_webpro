@@ -31,6 +31,28 @@ const ProfileSchema = new Schema({
   bio: {
     type: String
   },
+  experience: [
+    {
+      title: {
+        type: String,
+        required: true
+      },
+      location: {
+        type: String,
+        required: true
+      },
+      from: {
+        type: Date
+      },
+      to: {
+        type: Date
+      },
+      current: {
+        type: Boolean,
+        default: false
+      },
+    }
+  ],
   date: {
     type: Date,
     default: Date.now

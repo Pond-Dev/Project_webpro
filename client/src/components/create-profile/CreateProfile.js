@@ -101,6 +101,7 @@ class CreateProfile extends Component {
                 <TextFieldGroup
                   placeholder="Birthday"
                   name="birthday"
+                  type="date"
                   value={this.state.birthday}
                   onChange={this.onChange}
                   error={errors.birthday}
