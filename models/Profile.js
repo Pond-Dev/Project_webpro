@@ -7,32 +7,28 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  handle: {
+  firstname: {
     type: String,
     required: true,
-    max: 40
   },
-  company: {
+  lastname: {
     type: String
   },
-  website: {
-    type: String
-  },
-  location: {
-    type: String
-  },
-  status: {
+  gender: {
     type: String,
     required: true
   },
-  skills: {
-    type: [String],
-    required: true
-  },
-  bio: {
+  birthday: {
     type: String
   },
-  githubusername: {
+  address: {
+    type: String,
+    required: true
+  },
+  phonenumber: {
+    type: String
+  },
+  bio: {
     type: String
   },
   experience: [
@@ -41,16 +37,12 @@ const ProfileSchema = new Schema({
         type: String,
         required: true
       },
-      company: {
-        type: String,
-        required: true
-      },
       location: {
-        type: String
+        type: String,
+        required: true
       },
       from: {
-        type: Date,
-        required: true
+        type: Date
       },
       to: {
         type: Date
@@ -59,58 +51,8 @@ const ProfileSchema = new Schema({
         type: Boolean,
         default: false
       },
-      description: {
-        type: String
-      }
     }
   ],
-  education: [
-    {
-      school: {
-        type: String,
-        required: true
-      },
-      degree: {
-        type: String,
-        required: true
-      },
-      fieldofstudy: {
-        type: String,
-        required: true
-      },
-      from: {
-        type: Date,
-        required: true
-      },
-      to: {
-        type: Date
-      },
-      current: {
-        type: Boolean,
-        default: false
-      },
-      description: {
-        type: String
-      }
-    }
-  ],
-  social: {
-    youtube: {
-      type: String
-    },
-    twitter: {
-      type: String
-    },
-    facebook: {
-      type: String
-    },
-    linkedin: {
-      type: String
-    },
-    instagram: {
-      type: String
-    }
-  },
   date: {
     type: Date,
     default: Date.now
