@@ -19,7 +19,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
-            Review
+            Post Feed
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
           </Link>
         </li>
         <li className="nav-item">
@@ -60,7 +65,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Travarel
+            DevConnector
           </Link>
           <button
             className="navbar-toggler"
@@ -76,7 +81,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-                  Profiles
+                  Developers
                 </Link>
               </li>
             </ul>
