@@ -53,7 +53,9 @@ router.post(
     }
 
     const newPost = new Post({
-      text: req.body.text,
+      title: req.body.title,
+      image: req.body.image,
+      comment: req.body.comment,
       name: req.body.name,
       avatar: req.body.avatar,
       user: req.user.id
@@ -170,7 +172,9 @@ router.post(
     Post.findById(req.params.id)
       .then(post => {
         const newComment = {
-          text: req.body.text,
+          title: req.body.title,
+          image: req.body.image,
+          comment: req.body.comment,
           name: req.body.name,
           avatar: req.body.avatar,
           user: req.user.id

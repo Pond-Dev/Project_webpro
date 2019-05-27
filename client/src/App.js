@@ -21,6 +21,7 @@ import EditProfile from './components/edit-profile/EditProfile';
 import AddExperience from './components/add-credentials/AddExperience'
 import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
+import posts from './components//posts/posts'
 import './App.css';
 
 // Check for token
@@ -79,6 +80,13 @@ class App extends Component {
                   exact
                   path="/add-experience"
                   component={AddExperience}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed"
+                  component={posts}
                 />
               </Switch>
             </div>
