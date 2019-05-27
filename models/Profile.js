@@ -28,6 +28,9 @@ const ProfileSchema = new Schema({
   phonenumber: {
     type: String
   },
+  bio: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now

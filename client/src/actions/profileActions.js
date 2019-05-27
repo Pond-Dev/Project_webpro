@@ -29,7 +29,7 @@ export const getCurrentProfile = () => dispatch => {
 };
 
 // Get profile by firstname
-export const getProfileByHandle = firstname => dispatch => {
+export const getProfileByFirstname = firstname => dispatch => {
   dispatch(setProfileLoading());
   axios
     .get(`/api/profile/firstname/${firstname}`)

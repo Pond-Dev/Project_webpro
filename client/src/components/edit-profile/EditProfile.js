@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
+import TextFieldAreaGroups from '../common/TextFieldAreaGroups'
 import { createProfile,getCurrentProfile } from '../../actions/profileActions';
 import isEmpty from '../../validation/is-empty'
 
@@ -18,6 +19,7 @@ class CreateProfile extends Component {
       birthday: '',
       address: '',
       phonenumber: '',
+      bio: '',
       errors: {}
     };
 
@@ -49,7 +51,8 @@ class CreateProfile extends Component {
         gender: profile.gender,
         birthday: profile.birthday,
         address: profile.address,
-        phonenumber: profile.phonenumber
+        phonenumber: profile.phonenumber,
+        bio: profile.bio
       })
     }
   }
@@ -63,7 +66,8 @@ class CreateProfile extends Component {
       gender: this.state.gender,
       birthday: this.state.birthday,
       address: this.state.address,
-      phonenumber: this.state.phonenumber
+      phonenumber: this.state.phonenumber,
+      bio: this.state.bio
     };
 
     this.props.createProfile(profileData, this.props.history);
@@ -140,6 +144,14 @@ class CreateProfile extends Component {
                   error={errors.phonenumber}
                   info="Please use comma separated values (eg.
                     HTML,CSS,JavaScript,PHP"
+                />
+                <TextFieldAreaGroups
+                  placeholder="Short Bio"
+                  name="bio"
+                  value={this.state.bio}
+                  onChange={this.onChange}
+                  error={errors.bio}
+                  info="Tell us a little about yourself"
                 />
                 <input
                   type="submit"

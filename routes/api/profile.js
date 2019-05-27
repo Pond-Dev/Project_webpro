@@ -122,6 +122,7 @@ router.post(
     if (req.body.birthday) profileFields.birthday = req.body.birthday;
     if (req.body.address) profileFields.address = req.body.address;
     if (req.body.phonenumber) profileFields.phonenumber = req.body.phonenumber;
+    if (req.body.bio) profileFields.bio = req.body.bio;
 
     Profile.findOne({ user: req.user.id }).then(profile => {
       if (profile) {
