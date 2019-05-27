@@ -7,7 +7,7 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  title: {
+  text: {
     type: String,
     required: true
   },

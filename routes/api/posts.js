@@ -53,7 +53,7 @@ router.post(
     }
 
     const newPost = new Post({
-      title: req.body.title,
+      text: req.body.text,
       image: req.body.image,
       comment: req.body.comment,
       name: req.body.name,
@@ -172,7 +172,7 @@ router.post(
     Post.findById(req.params.id)
       .then(post => {
         const newComment = {
-          title: req.body.title,
+          text: req.body.text,
           image: req.body.image,
           comment: req.body.comment,
           name: req.body.name,

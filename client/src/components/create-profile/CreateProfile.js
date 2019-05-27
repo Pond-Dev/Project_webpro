@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
-import TextFieldAreaGroups from '../common/TextFieldAreaGroups'
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup'
 import { createProfile } from '../../actions/profileActions';
 
 class CreateProfile extends Component {
@@ -123,7 +123,7 @@ class CreateProfile extends Component {
                   error={errors.phonenumber}
                   info=""
                 />
-                <TextFieldAreaGroups
+                <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
                   value={this.state.bio}

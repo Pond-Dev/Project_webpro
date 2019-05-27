@@ -28,7 +28,7 @@ export const getCurrentProfile = () => dispatch => {
     );
 };
 
-// Get profile by firstname
+// Get profile by handle
 export const getProfileByFirstname = firstname => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -46,7 +46,6 @@ export const getProfileByFirstname = firstname => dispatch => {
       })
     );
 };
-
 
 // Create Profile
 export const createProfile = (profileData, history) => dispatch => {
@@ -74,6 +73,8 @@ export const addExperience = (expData, history) => dispatch => {
     );
 };
 
+
+
 // Delete Experience
 export const deleteExperience = id => dispatch => {
   axios
@@ -92,7 +93,7 @@ export const deleteExperience = id => dispatch => {
     );
 };
 
-// Get all profile
+// Get all profiles
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -110,7 +111,6 @@ export const getProfiles = () => dispatch => {
       })
     );
 };
-
 
 // Delete account & profile
 export const deleteAccount = () => dispatch => {
