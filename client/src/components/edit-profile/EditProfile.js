@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import TextFieldAreaGroups from '../common/TextFieldAreaGroups'
-import { createProfile,getCurrentProfile } from '../../actions/profileActions';
+import { createProfile, getCurrentProfile } from '../../actions/profileActions';
 import isEmpty from '../../validation/is-empty'
 
 class CreateProfile extends Component {
@@ -27,8 +27,8 @@ class CreateProfile extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidMount(){
-      this.props.getCurrentProfile() ;
+  componentDidMount() {
+    this.props.getCurrentProfile();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,11 +36,11 @@ class CreateProfile extends Component {
       this.setState({ errors: nextProps.errors });
     }
 
-    if(nextProps.profile.profile) {
+    if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile;
 
       // if profile field doesnot exist, make empty string
-      profile.lastname = !isEmpty(profile.lastname) ? profile.lastname : '' ;
+      profile.lastname = !isEmpty(profile.lastname) ? profile.lastname : '';
       profile.birthday = !isEmpty(profile.birthday) ? profile.birthday : '';
       profile.phonenumber = !isEmpty(profile.phonenumber) ? profile.phonenumber : '';
 
@@ -101,15 +101,15 @@ class CreateProfile extends Component {
                   value={this.state.firstname}
                   onChange={this.onChange}
                   error={errors.firstname}
-                  info="A unique handle for your profile URL. Your full name, lastname name, nickname"
+                  info=""
                 />
                 <TextFieldGroup
-                  placeholder="lastname"
+                  placeholder="Lastname"
                   name="lastname"
                   value={this.state.lastname}
                   onChange={this.onChange}
                   error={errors.lastname}
-                  info="Could be your own lastname or one you work for"
+                  info=""
                 />
                 <SelectListGroup
                   placeholder="Gender"
@@ -118,7 +118,7 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.gender}
-                  info="Could be your own gender or a lastname one"
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="Birthday"
@@ -127,7 +127,7 @@ class CreateProfile extends Component {
                   value={this.state.birthday}
                   onChange={this.onChange}
                   error={errors.birthday}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="* Address"
@@ -135,16 +135,15 @@ class CreateProfile extends Component {
                   value={this.state.address}
                   onChange={this.onChange}
                   error={errors.address}
-                  info="Give us an idea of where you are at in your career"
+                  info=""
                 />
                 <TextFieldGroup
-                  placeholder="phonenumber"
+                  placeholder="Phonenumber"
                   name="phonenumber"
                   value={this.state.phonenumber}
                   onChange={this.onChange}
                   error={errors.phonenumber}
-                  info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                  info=""
                 />
                 <TextFieldAreaGroups
                   placeholder="Short Bio"
@@ -152,7 +151,7 @@ class CreateProfile extends Component {
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell us a little about yourself"
+                  info=""
                 />
                 <input
                   type="submit"
@@ -180,6 +179,6 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { createProfile,getCurrentProfile })(
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
   withRouter(CreateProfile)
 );

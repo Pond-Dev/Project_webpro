@@ -79,15 +79,15 @@ class CreateProfile extends Component {
                   value={this.state.firstname}
                   onChange={this.onChange}
                   error={errors.firstname}
-                  info="A unique handle for your profile URL. Your full name, lastname name, nickname"
+                  info=""
                 />
                 <TextFieldGroup
-                  placeholder="lastname"
+                  placeholder="Lastname"
                   name="lastname"
                   value={this.state.lastname}
                   onChange={this.onChange}
                   error={errors.lastname}
-                  info="Could be your own lastname or one you work for"
+                  info=""
                 />
                 <SelectListGroup
                   placeholder="Gender"
@@ -96,7 +96,7 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.gender}
-                  info="Could be your own gender or a lastname one"
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="Birthday"
@@ -105,7 +105,7 @@ class CreateProfile extends Component {
                   value={this.state.birthday}
                   onChange={this.onChange}
                   error={errors.birthday}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="* Address"
@@ -113,16 +113,15 @@ class CreateProfile extends Component {
                   value={this.state.address}
                   onChange={this.onChange}
                   error={errors.address}
-                  info="Give us an idea of where you are at in your career"
+                  info=""
                 />
                 <TextFieldGroup
-                  placeholder="phonenumber"
+                  placeholder="Phonenumber"
                   name="phonenumber"
                   value={this.state.phonenumber}
                   onChange={this.onChange}
                   error={errors.phonenumber}
-                  info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                  info=""
                 />
                 <TextFieldAreaGroups
                   placeholder="Short Bio"
@@ -130,7 +129,7 @@ class CreateProfile extends Component {
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell us a little about yourself"
+                  info=""
                 />
                 <input
                   type="submit"
