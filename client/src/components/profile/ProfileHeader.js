@@ -27,17 +27,6 @@ class ProfileHeader extends Component {
                                     <span>{profile.lastname}</span>
                                 )}
                             </p>
-                            <p>
-                                {isEmpty(profile.birthday) ? null : (
-                                    <span> {profile.birthday}</span>
-                                )}
-                            </p>
-                            <p>
-                                {isEmpty(profile.phonenumber) ? null : (
-                                    <span> {profile.phonenumber}</span>
-                                )}
-                            </p>
-
                         </div>
                     </div>
                 </div>

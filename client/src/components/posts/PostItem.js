@@ -51,7 +51,7 @@ class PostItem extends Component {
               src={post.image}
               alt=""
               style={{ width: '75%', height: '75%' }}
-            />
+            /><br />
             <p className="lead">{post.comment}</p>
             {showActions ? (
               <span>

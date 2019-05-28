@@ -30,7 +30,6 @@ class CommentForm extends Component {
 
     const newComment = {
       text: this.state.text,
-      image: this.state.image,
       name: user.name,
       avatar: user.avatar
     };
