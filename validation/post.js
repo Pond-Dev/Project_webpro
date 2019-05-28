@@ -11,7 +11,7 @@ module.exports = function validatePostInput(data) {
   }
 
   if (Validator.isEmpty(data.text)) {
-    errors.text = 'Text field is required';
+    errors.text = 'Post field is required';
   }
 
   return {

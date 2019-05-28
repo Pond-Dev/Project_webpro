@@ -46,6 +46,13 @@ class PostItem extends Component {
           </div>
           <div className="col-md-10">
             <p className="lead">{post.text}</p>
+            <img
+              className=" d-none d-md-block"
+              src={post.image}
+              alt=""
+              style={{ width: '75%', height: '75%' }}
+            />
+            <p className="lead">{post.comment}</p>
             {showActions ? (
               <span>
                 <button

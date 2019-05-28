@@ -24,9 +24,20 @@ class ProfileHeader extends Component {
                             <p className="lead text-center">
                                 {profile.firstname}{' '}
                                 {isEmpty(profile.lastname) ? null : (
-                                    <span> {profile.lastname}</span>
+                                    <span>{profile.lastname}</span>
                                 )}
                             </p>
+                            <p>
+                                {isEmpty(profile.birthday) ? null : (
+                                    <span> {profile.birthday}</span>
+                                )}
+                            </p>
+                            <p>
+                                {isEmpty(profile.phonenumber) ? null : (
+                                    <span> {profile.phonenumber}</span>
+                                )}
+                            </p>
+
                         </div>
                     </div>
                 </div>
