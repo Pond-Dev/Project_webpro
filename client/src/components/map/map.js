@@ -4,10 +4,9 @@ import './map.css';
 class map extends Component {
     render() {
         return (
-
-            <div>
+            <div >
                 <center>
-                    <h1>Thailand</h1><br />
+                    <h1 className="display-4 text-center">Thailand</h1><br />
                     <svg
                         xmlns mapsvg="http://mapsvg.com"
                         xmlns dc="http://purl.org/dc/elements/1.1/"
