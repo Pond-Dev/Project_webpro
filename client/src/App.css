@@ -37,3 +37,18 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+#footer{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+}
+
+/* h3#experience, p#setup{
+  color: #2471A3;
+} */
+
+div#exper, div#create, div#addexper, div#editpro, div#setup{
+    background-color: white;
+    border-radius:5px;
+}

@@ -67,7 +67,7 @@ class CreateProfile extends Component {
       <div className="create-profile">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div id="create" className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
@@ -140,7 +140,7 @@ class CreateProfile extends Component {
                   value="Submit"
                   className="btn btn-info btn-block mt-4"
                 />
-              </form>
+              </form><br /><br />
             </div>
           </div>
         </div>

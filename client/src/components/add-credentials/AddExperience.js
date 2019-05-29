@@ -61,7 +61,7 @@ class AddExperience extends Component {
             <div className="add-experience">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8 m-auto">
+                        <div id="addexper" className="col-md-8 m-auto">
                             <Link to="/dashboard" className="btn btn-light">
                                 Go Back
                             </Link>
@@ -121,7 +121,7 @@ class AddExperience extends Component {
                                     value="Submit"
                                     className="btn btn-info btn-block mt-4"
                                 />
-                            </form>
+                            </form><br /><br />
                         </div>
                     </div>
                 </div>

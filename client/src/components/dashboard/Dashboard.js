@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import Spinner from '../common/Spinner';
-import ProfileActions from './ProfileAction'
-import Experience from './Experience'
+import ProfileActions from './ProfileAction';
+import Experience from './Experience';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -27,26 +27,26 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.firstname}`}>{user.name}</Link>
-            </p>
+          <div id="exper"><br />
+            <p id="welcome" className="lead ">
+              &nbsp;&nbsp;Welcome <Link to={`/profile/${profile.firstname}`}>{user.name}</Link>
+            </p>&nbsp;&nbsp;
             <ProfileActions />
             <Experience experience={profile.experience} />
-            <div style={{ marginBottom: '60px' }} />
+            <div style={{ marginBottom: '60px' }} />&nbsp;&nbsp;
             <button onClick={this.onDeleteClick.bind(this)} className=" btn btn-danger">
-              Delete My Account</button>
+              Delete My Account</button><br /><br />
           </div>
         );
       } else {
         // User is logged in but has no profile
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not yet setup a profile, please add some info</p>
+          <div id="setup"><br />
+            <p className="lead text-muted">&nbsp; Welcome {user.name}</p>
+            <p>&nbsp;&nbsp;You have not yet setup a profile, please add some info</p> &nbsp;&nbsp;
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
-            </Link>
+            </Link><br /><br />
           </div>
         );
       }

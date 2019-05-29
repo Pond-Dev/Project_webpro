@@ -4,9 +4,9 @@ import './map.css';
 class map extends Component {
     render() {
         return (
-            <div >
-                <center>
-                    <h1 className="display-4 text-center">Thailand</h1><br />
+            <div id="backmap" className="map" >
+                <center ><br />
+                    <h1 id="map" className="display-4 text-center">Thailand</h1><br />
                     <svg
                         xmlns mapsvg="http://mapsvg.com"
                         xmlns dc="http://purl.org/dc/elements/1.1/"
@@ -16,7 +16,7 @@ class map extends Component {
                         mapsvg geoViewBox="97.344728 20.463430 105.640023 5.614417"
                         width="559.57092"
                         height="1024.7631">
-                        <a xlink title="กรุงเทพมหานคร" xlinkhref="https://www.google.com/destination/map/topsights?source=hp&ei=RP7sXLvbMZff9QOjkrg4&q=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3&oq=&gs_l=psy-ab.1.1.35i39l6.3427.4561..6209...1.0..1.152.152.0j1......1....2j1..gws-wiz.....6.VExVjn4r81k&tcfs=&dest_src=ts&dest_mid=/m/0fn2g&sa=X&ved=2ahUKEwiFyp_a873iAhXBWisKHTmcBcIQ6tEBKAQwAHoECAoQBw#dest_mid=/m/0fn2g&dest_src=ts&tcfs=EjMKCC9tLzBmbjJnEifguIHguKPguLjguIfguYDguJfguJ7guKHguKvguLLguJnguITguKM"><path
+                        <a xlink title="กรุงเทพมหานคร" xlink href="https://www.google.com/destination/map/topsights?q=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E&rlz=1C1CHBF_enTH797TH797&oq=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%83%E0%B8%99+%E0%B8%81%E0%B8%A3&aqs=chrome.1.69i57j0l5.16165j0j7&sourceid=chrome&ie=UTF-8&tcfs=&dest_src=ts&dest_mid=/m/0fn2g&sa=X&ved=2ahUKEwjf_pThu8DiAhUDrI8KHR8aAYMQ6tEBKAQwAHoECAsQBw"><path
                             d="m 217.28844,457.46255 0.7,-0.33 2,0.66 0.51,-0.71 0.92,0.42 0.02,0.76 0.97,0.03 0.04,0.41 3.31,0.12 1.17,0.83 1.47,0.08 6.19,-1.38 6.29,-0.59 0,0 -0.52,5.83 -0.26,0.81 -0.69,-0.1 3.08,2.5 -1.91,1.66 -3.67,6.17 0.39,0.25 0,0 -0.12,0.53 -4.77,-1.85 -5.27,-0.12 0.13,1.57 -0.9,2.71 -2.11,-0.72 -0.07,-0.64 -0.79,0.33 -0.52,1.32 -4.51,-1.14 0.54,-1.65 -2.15,-0.97 -0.62,2.33 -0.8,0.2 -0.91,-0.7 -0.28,0.43 -0.19,3.13 0.4,1.56 -0.76,0.26 -1.92,-0.44 -0.75,0.99 -0.34,-0.82 -0.7,0.04 -0.68,3.38 0.54,3.67 0,0 -3.01,0.59 0,0 -0.23,-1.22 1.03,-2.14 -0.14,-1.23 -1.56,0.21 -0.69,-2.14 -0.54,0.19 0.35,-0.35 -0.76,-2.66 -0.99,-0.74 -1.08,-0.06 -0.55,-6.38 0,0 -0.14,-4.58 -0.67,-1.54 0,0 0.72,1.26 8.74,0.44 0.75,0.59 2.05,-0.77 1.01,-0.87 -0.58,-0.31 0.13,-0.52 2.35,-1.71 z"
                             title="Krung Thep Maha Nakhon  (Bangkok)"
                             id="TH-10" /></a>
@@ -330,6 +330,7 @@ class map extends Component {
                             title="Lake Songkhla"
                             id="TH-LKSG" /></a>
                     </svg >
+                    <br /><br /><br /><br /><br />
                 </center>
             </div>
         )

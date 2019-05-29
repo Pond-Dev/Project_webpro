@@ -56,7 +56,7 @@ class Register extends Component {
       <div className="register">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div id="register" className="col-md-8 m-auto"><br /><br />
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">
                 Create your account
@@ -68,6 +68,7 @@ class Register extends Component {
                   value={this.state.name}
                   onChange={this.onChange}
                   error={errors.name}
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="Email"
@@ -95,10 +96,10 @@ class Register extends Component {
                   error={errors.password2}
                 />
                 <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+              </form><br /><br />
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     );
   }

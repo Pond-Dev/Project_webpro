@@ -29,7 +29,7 @@ class Navbar extends Component {
             alt={user.name}
             style={{ width: '25px', marginRight: '5px', paddingTop: '5px' }}
             title="You must have a Gravatar connected to your email to display an image"
-          />{' '}
+          />
         </li>
         <li className="nav-item">
           <Link onClick={this.onLogoutClick.bind(this)}

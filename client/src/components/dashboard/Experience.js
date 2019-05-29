@@ -26,10 +26,10 @@ class Experience extends Component {
             </tr>
         ))
         return (
-            <div>
-                <h4 className="mb-4">Experience Travel</h4>
+            <div><br />
+                <h4 className="mb-4">&nbsp;&nbsp;Experience Travel</h4>
                 <table className="table">
-                    <thead>
+                    <thead>&nbsp;
                         <tr>
                             <th>Title</th>
                             <th>Location</th>

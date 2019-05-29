@@ -21,8 +21,7 @@ router.get('/test', (req, res) => res.json({ msg: 'Profile Works' }));
 // @access  Private
 router.get(
   '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  passport.authenticate('jwt', { session: false }), (req, res) => {
     const errors = {};
 
     Profile.findOne({ user: req.user.id })
@@ -43,7 +42,6 @@ router.get(
 // @access  Public
 router.get('/all', (req, res) => {
   const errors = {};
-
   Profile.find()
     .populate('user', ['name', 'avatar'])
     .then(profiles => {
@@ -51,7 +49,6 @@ router.get('/all', (req, res) => {
         errors.noprofile = 'There are no profiles';
         return res.status(404).json(errors);
       }
-
       res.json(profiles);
     })
     .catch(err => res.status(404).json({ profile: 'There are no profiles' }));
@@ -64,7 +61,7 @@ router.get('/all', (req, res) => {
 router.get('/firstname/:firstname', (req, res) => {
   const errors = {};
 
-  Profile.findOne({ handle: req.params.handle })
+  Profile.findOne({ firstname: req.params.firstname })
     .populate('user', ['name', 'avatar'])
     .then(profile => {
       if (!profile) {
@@ -104,8 +101,7 @@ router.get('/user/:user_id', (req, res) => {
 // @access  Private
 router.post(
   '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  passport.authenticate('jwt', { session: false }), (req, res) => {
     const { errors, isValid } = validateProfileInput(req.body);
 
     // Check Validation
@@ -156,8 +152,7 @@ router.post(
 // @access  Private
 router.post(
   '/experience',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  passport.authenticate('jwt', { session: false }), (req, res) => {
     const { errors, isValid } = validateExperienceInput(req.body);
 
     // Check Validation
@@ -166,20 +161,21 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    Profile.findOne({ user: req.user.id }).then(profile => {
-      const newExp = {
-        title: req.body.title,
-        location: req.body.location,
-        from: req.body.from,
-        to: req.body.to,
-        current: req.body.current
-      };
+    Profile.findOne({ user: req.user.id })
+      .then(profile => {
+        const newExp = {
+          title: req.body.title,
+          location: req.body.location,
+          from: req.body.from,
+          to: req.body.to,
+          current: req.body.current
+        };
 
-      // Add to exp array
-      profile.experience.unshift(newExp);
+        // Add to exp array
+        profile.experience.unshift(newExp);
 
-      profile.save().then(profile => res.json(profile));
-    });
+        profile.save().then(profile => res.json(profile));
+      });
   }
 );
 
@@ -188,8 +184,7 @@ router.post(
 // @access  Private
 router.delete(
   '/experience/:exp_id',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  passport.authenticate('jwt', { session: false }), (req, res) => {
     Profile.findOne({ user: req.user.id })
       .then(profile => {
         // Get remove index
@@ -213,8 +208,7 @@ router.delete(
 // @access  Private
 router.delete(
   '/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  passport.authenticate('jwt', { session: false }), (req, res) => {
     Profile.findOneAndRemove({ user: req.user.id }).then(() => {
       User.findOneAndRemove({ _id: req.user.id }).then(() =>
         res.json({ success: true })

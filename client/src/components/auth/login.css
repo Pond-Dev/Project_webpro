@@ -1,0 +1,15 @@
+body{
+    background: url('../../img/ballon1.jpg') no-repeat;
+    background-size: cover;
+}
+.login{
+    margin-top: 15%;
+}
+.register{
+    margin-top: 10%;
+}
+
+#login, #register{
+    background-color: white;
+    border-radius:15px;
+}
