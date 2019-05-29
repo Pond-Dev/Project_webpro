@@ -18,7 +18,12 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
-
+    const styles = {
+      backgroundColor: '#ffffff9e',
+      borderRadius: '5px',
+      marginTop: '100px'
+    }
+    
     let dashboardContent;
 
     if (profile === null || loading) {
@@ -27,7 +32,7 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div id="exper"><br />
+          <div id="exper" style={styles}><br />
             <p id="welcome" className="lead ">
               &nbsp;&nbsp;Welcome <Link to={`/profile/${profile.firstname}`}>{user.name}</Link>
             </p>&nbsp;&nbsp;

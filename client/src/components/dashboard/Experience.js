@@ -9,6 +9,8 @@ class Experience extends Component {
         this.props.deleteExperience(id);
     }
 
+
+
     render() {
         const experience = this.props.experience.map(exp => (
             <tr key={exp._id}>
@@ -24,11 +26,19 @@ class Experience extends Component {
                         className="btn btn-danger">Delete</button>
                 </td>
             </tr>
+
+
         ))
+        const styles = {
+            display: 'table',
+            margin: '20px',
+            width: '-webkit-fill-available'
+        }
+
         return (
             <div><br />
                 <h4 className="mb-4">&nbsp;&nbsp;Experience Travel</h4>
-                <table className="table">
+                <table className="table" style={styles}>
                     <thead>&nbsp;
                         <tr>
                             <th>Title</th>

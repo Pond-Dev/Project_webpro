@@ -60,6 +60,7 @@ class Navbar extends Component {
         <div className="container">
           <Link className="navbar-brand" to="/">
             Travarel
+            <i class="fas fa-globe-asia"></i>
           </Link>
           <button
             className="navbar-toggler"

@@ -9,24 +9,26 @@ class ProfileItem extends Component {
 
 
         return (
-            <div className="card card-body bg-light mb-3">
-                <div className="row">
-                    <div className="col-2">
-                        <img src={profile.user.avatar} alt="" className="rounded-circle" />
-                    </div>
-                    <div className="col-lg-6 col-md-4 col-8">
-                        <h3>{profile.user.name}</h3>
-                        <p>
-                            {profile.gender}
-                        </p>
-                        <p>
-                            {isEmpty(profile.address) ? null : (
-                                <span>{profile.address}</span>
-                            )}
-                        </p>
-                        <Link to={`/profile/${profile.firstname}`} className="btn btn-info">
-                            View Profile
-                        </Link>
+            <div className="col-sm-6">
+                <div className="card card-body bg-light mb-3">
+                    <div className="row">
+                        <div className="col-2">
+                            <img src={profile.user.avatar} alt="" className="rounded-circle" />
+                        </div>
+                        <div className="col-sm-6">
+                            <h3>{profile.user.name}</h3>
+                            <p>
+                                {profile.gender}
+                            </p>
+                            <p>
+                                {isEmpty(profile.address) ? null : (
+                                    <span>{profile.address}</span>
+                                )}
+                            </p>
+                            <Link to={`/profile/${profile.firstname}`} className="btn btn-info">
+                                View Profile
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

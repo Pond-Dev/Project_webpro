@@ -53,7 +53,7 @@ class PostForm extends Component {
 
     return (
       <div className="post-form mb-3">
-        <div className="card card-info">
+        <div className="card card-info" style={{ backgroundColor: '#ffffff8f' }}>
           <div className="card-header bg-info text-white">My Review</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>

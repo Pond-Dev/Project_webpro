@@ -9,7 +9,7 @@ module.exports = function validateProfileInput(data) {
   data.address = !isEmpty(data.address) ? data.address : '';
 
   if (!Validator.isLength(data.firstname, { min: 2, max: 40 })) {
-    errors.firstname = 'Handle needs to between 2 and 4 characters';
+    errors.firstname = 'Firstname needs to between 2 and 4 characters';
   }
 
   if (Validator.isEmpty(data.firstname)) {
