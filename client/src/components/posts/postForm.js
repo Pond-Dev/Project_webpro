@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import TextFieldGroup from '../common/TextFieldGroup';
 import { addPost } from '../../actions/postActions';
 
 class PostForm extends Component {
@@ -10,8 +9,6 @@ class PostForm extends Component {
     super(props);
     this.state = {
       text: '',
-      image: '',
-      comment: '',
       errors: {}
     };
 
@@ -32,16 +29,12 @@ class PostForm extends Component {
 
     const newPost = {
       text: this.state.text,
-      image: this.state.image,
-      comment: this.state.comment,
       name: user.name,
       avatar: user.avatar
     };
 
     this.props.addPost(newPost);
     this.setState({ text: '' });
-    this.setState({ image: '' });
-    this.setState({ comment: '' });
   }
 
   onChange(e) {
@@ -53,31 +46,17 @@ class PostForm extends Component {
 
     return (
       <div className="post-form mb-3">
-        <div className="card card-info" style={{ backgroundColor: '#ffffff8f' }}>
-          <div className="card-header bg-info text-white">My Review</div>
+        <div className="card card-info">
+          <div className="card-header bg-info text-white">Say Somthing...</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <TextFieldGroup
-                  placeholder="Header"
+                <TextAreaFieldGroup
+                  placeholder="Create a post"
                   name="text"
                   value={this.state.text}
                   onChange={this.onChange}
                   error={errors.text}
-                />
-                <TextFieldGroup
-                  placeholder="Picture (Input your URL)"
-                  name="image"
-                  value={this.state.image}
-                  onChange={this.onChange}
-                  error={errors.image}
-                />
-                <TextAreaFieldGroup
-                  placeholder="Comment"
-                  name="comment"
-                  value={this.state.comment}
-                  onChange={this.onChange}
-                  error={errors.comment}
                 />
               </div>
               <button type="submit" className="btn btn-dark">
